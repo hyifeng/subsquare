@@ -1,8 +1,9 @@
 export const runtime = "edge";
 
 export default async function handler(request) {
-  const { searchParams } = new URL(request.url);
-  const paramInterval = searchParams.get("interval") || 12000;
+  // const { searchParams } = new URL(request.url);
+  // const paramInterval = searchParams.get("interval") || 12000;
+  const paramInterval = 12000;
   const parsedInterval = parseInt(paramInterval, 10);
   if (isNaN(parsedInterval) || parsedInterval <= 0) {
     return new Response("Invalid interval", { status: 400 });
