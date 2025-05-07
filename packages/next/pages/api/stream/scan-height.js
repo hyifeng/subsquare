@@ -1,6 +1,6 @@
 export const runtime = "edge";
 
-export default async function handler(request) {
+export default async function handler() {
   // const { searchParams } = new URL(request.url);
   // const paramInterval = searchParams.get("interval") || 12000;
   // const paramInterval = 12000;
