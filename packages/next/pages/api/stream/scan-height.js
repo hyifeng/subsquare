@@ -1,4 +1,4 @@
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default async function handler() {
   // const { searchParams } = new URL(request.url);
