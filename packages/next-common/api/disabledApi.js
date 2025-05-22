@@ -5,12 +5,14 @@ function trimEndSlash(url) {
 }
 
 export function isApiDisabled(req) {
-  const isDisabledApi = disabledApiRoutes.some((route) => req.url.match(route));
+  const isDisabledApi = disabledApiRoutes.some((route) =>
+    req.url?.match?.(route),
+  );
   if (!isDisabledApi) {
     return false;
   }
 
-  const isRequestFromSubsquare = req.headers.referer.startsWith(
+  const isRequestFromSubsquare = req.headers?.referer?.startsWith?.(
     trimEndSlash(process.env.NEXT_PUBLIC_API_END_POINT),
   );
   if (isRequestFromSubsquare) {
